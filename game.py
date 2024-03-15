@@ -1,7 +1,7 @@
 import random
 
 # Lista de palabras posibles
-words = ["python", "programación", "computadora", "código", "desarrollo", "inteligencia"]
+words = ["python", "programacion", "computadora", "codigo", "desarrollo", "inteligencia"]
 
 # Elegir una palabra al azar
 secret_word = random.choice(words)
@@ -23,6 +23,11 @@ print(f"Palabra: {word_displayed}")
 for i in range(max_attempts):
     # Pedir al jugador que ingrese una letra
     letter = input("Ingresa una letra: ").lower()
+    
+    # Si el usuario no escribe nada le tira un error y cuenta como un intento
+    if letter == "":
+        print("ERROR No pusiste nada")
+        continue
     
     # Verificar si la letra ya ha sido adivinada
     if letter in guessed_letters:
